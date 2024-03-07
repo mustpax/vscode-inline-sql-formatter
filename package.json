@@ -1,14 +1,14 @@
 {
-  "name": "inline-sql-formatter",
+  "name": "inline-sql-formatter-moose",
   "author": "https://github.com/vulkd",
-  "publisher": "vulkd",
+  "publisher": "moose",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vulkd/vscode-inline-sql-formatter.git"
+    "url": "https://github.com/mustpax/vscode-inline-sql-formatter.git"
   },
-  "displayName": "Inline SQL Formatter",
+  "displayName": "Inline SQL Formatter - Moose",
   "description": "Formats inline SQL",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -16,7 +16,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:inline-sql-formatter.sqlInlineFormat"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -50,5 +50,11 @@
   },
   "dependencies": {
     "sql-formatter": "^4.0.2"
+  },
+  "editor": {
+    "codeActionsOnSave": {
+      "source.fixAll.sql": true,
+      "source.fixAll.sql-formatter": true
+    }
   }
 }
