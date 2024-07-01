@@ -8,7 +8,7 @@
   },
   "displayName": "Inline SQL Formatter - Moose",
   "description": "Formats inline SQL",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.56.0"
   },

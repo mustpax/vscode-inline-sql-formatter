@@ -22,9 +22,10 @@ export function activate(context: vscode.ExtensionContext) {
 
       // Display a message box to the user
       const editor = vscode.window.activeTextEditor;
-      // @ts-ignore
+      if (!editor) {
+        return;
+      }
       let cursorPosition = editor.selection.start;
-      // @ts-ignore
       let cursorPositione = editor.selection.end;
       // @ts-ignore
 
@@ -40,9 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
         language: "postgresql", // Defaults to "sql"
         indent: "  ", // Defaults to two spaces
       });
-      // @ts-ignore
       editor.edit(function (editBuilder) {
-        // @ts-ignore
         editBuilder.replace(wordRange, textFormatted);
       });
     }
